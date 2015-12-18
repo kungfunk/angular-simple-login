@@ -5,9 +5,9 @@
         .module('simpleLoginApp')
         .controller('loginFormController', loginFormController);
 
-    loginFormController.$inject = ['UserService', '$location', 'sessionService'];
+    loginFormController.$inject = ['UserService', '$location', 'storageService'];
 
-    function loginFormController(UserService, $location, sessionService) {
+    function loginFormController(UserService, $location, storageService) {
         var vm = this;
 
         vm.username = '';
@@ -20,8 +20,7 @@
             user = UserService.getByUsername(vm.username);
             if(user.hasOwnProperty('password') && user.password === vm.password) {
                 vm.loginSuccess = true;
-                sessionService.loggedin = true;
-                sessionService.loggedUser = user;
+                storageService.setSession(user);
                 $location.path('/dashboard');
             }
         };

@@ -5,10 +5,15 @@
         .module('simpleLoginApp')
         .factory('sessionService', sessionService);
 
-    function sessionService() {
-        this.loggedin = false;
-        this.loggedUser = {};
+    sessionService.$inject = ['storageService'];
 
-        return { loggedin : this.loggedin, loggedUser : this.loggedUser };
+    function sessionService(storageService) {
+        var loggedUser = storageService.getSession();
+        var loggedin = loggedUser !== null;
+
+        return {
+            loggedUser : loggedUser,
+            loggedin : loggedin
+        };
     }
 })();

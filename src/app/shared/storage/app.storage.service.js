@@ -24,6 +24,15 @@
             }
         };
 
+        var sessionDatabase = {
+            load : function() {
+                return localStorageService.get('session');
+            },
+            save : function(usuario) {
+                return localStorageService.set('session', usuario);
+            }
+        };
+
         return {
             selectUser : function(data) {
                 var usuarios = userDatabase.load();
@@ -37,6 +46,12 @@
             },
             getAllUsers : function() {
                 return userDatabase.load();
+            },
+            getSession : function() {
+                return sessionDatabase.load();
+            },
+            setSession : function(usuario) {
+                return sessionDatabase.save(usuario);
             }
         };
     }

@@ -12,6 +12,14 @@
                   controller: 'loginFormController',
                   controllerAs: 'loginForm'
                 })
+                .when('/logout', {
+                     resolve: {
+                         logout: ['storageService', '$location', function (storageService, $location) {
+                             storageService.setSession(null);
+                             $location.path('/login');
+                         }]
+                     },
+                 })
                 .when('/signup', {
                   templateUrl: 'app/components/register/app.register-form.template.html',
                   controller: 'registerFormController',
