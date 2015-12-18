@@ -1,0 +1,30 @@
+<form name="form" ng-submit="registerForm.doRegister()" class="login-form" ng-controller="registerFormController as registerForm" ng-cloak>
+    <md-input-container>
+        <label>Usuario</label>
+        <input placeholder="Your username" type="text" name="username" ng-model="registerForm.username" ng-required="true" autofocus>
+        <div ng-messages="form.username.$error">
+            <div ng-message="required">Your username is required.</div>
+        </div>
+    </md-input-container>
+    <md-input-container>
+        <label>Password</label>
+        <input placeholder="Your password" type="password" name="password" ng-model="registerForm.password" ng-required="true">
+        <div ng-messages="form.password.$error">
+            <div ng-message="required">Your password is required.</div>
+        </div>
+    </md-input-container>
+    <md-input-container>
+        <label>Email</label>
+        <input placeholder="Your email" type="email" name="email" ng-model="registerForm.email" ng-required="true">
+        <div ng-messages="form.email.$error">
+            <div ng-message="required">Your email is required.</div>
+            <div ng-message="email">Invalid email.</div>
+        </div>
+    </md-input-container>
+    <section layout="row" layout-sm="row" layout-wrap>
+        <md-button flex="100" type="submit" class="md-raised md-primary">Sign Up</md-button>
+    </section>
+    <p class="small-text">
+        ¿Ya estas registrado? Pulsa <a href="#/login">aquí</a> para entrar.
+    </p>
+</form>

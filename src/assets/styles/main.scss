@@ -1,0 +1,9 @@
+body { background-color: #f1f1f1; color: #222; }
+.container-max-width { max-width: 1200px; margin: 0 auto; padding: 0 .5em; overflow: hidden; }
+.login-form { overflow: hidden; margin: 3em auto; padding: 2em; background-color: #fff; max-width: 400px; box-shadow: rgba(0,0,0,0.14902) 0px 1px 1px 0px,rgba(0,0,0,0.09804) 0px 1px 2px 0px; border: 1px solid #ebebeb; }
+md-input-container { display: block; }
+.actions { text-align: right; margin-top: 1em; }
+.full-width { width: 100%; margin: 0; }
+.small-text { font-size: .8em; color: #666; }
+.login-error { background-color: #FD6363; color: #fff; padding: 1em; margin-bottom: 2em; }
+.input-sub-error { font-size: .8em; color: #666; margin: 0; }

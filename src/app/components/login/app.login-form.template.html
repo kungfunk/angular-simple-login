@@ -1,0 +1,23 @@
+<form name="form" ng-submit="loginForm.doLogin()" class="login-form" ng-controller="loginFormController as loginForm" ng-cloak>
+    <div class="login-error animated bounceIn" ng-show="form.$submitted && !loginForm.loginSuccess"><i class="fa fa-warning"></i> Incorrect user / password</div>
+    <md-input-container>
+        <label>Usuario</label>
+        <input placeholder="Your username" type="text" name="username" ng-model="loginForm.username" ng-required="true" autofocus>
+        <div ng-messages="form.username.$error">
+            <div ng-message="required">Your username is required.</div>
+        </div>
+    </md-input-container>
+    <md-input-container>
+        <label>Password</label>
+        <input placeholder="Your password" type="password" name="password" ng-model="loginForm.password" ng-required="true">
+        <div ng-messages="form.password.$error">
+            <div ng-message="required">Your password is required.</div>
+        </div>
+    </md-input-container>
+    <section layout="row" layout-sm="row" layout-wrap>
+        <md-button flex="100" type="submit" class="md-raised md-primary">Login</md-button>
+    </section>
+    <p class="small-text">
+        ¿Aún no estas registrado? Pulsa <a href="#/signup">aquí</a> para registrarte.
+    </p>
+</form>
